@@ -7,20 +7,19 @@ Project consists of a simple python script that behaves as a ransmoware program.
 <h2>Environments Used </h2>
 
 - <b>Kali Linux</b>
+- <b>Linode</b>
 - <b>Python</b>
 
 <h2>Program walk-through:</h2>
 
 <p align="center">
-Launch the VMs and get Nessus ready: <br/>
+Set up the environmnet: <br/>
   
-  - <b>2 separate VMs have been prepared and launched (Windows 10 on the left and Kali Linux on the right)</b>
-  - <b>On the Kali VM is displayed the installation process of the Nessus Essential after the packet has been downloaded</b>
-  - <b>Within the terminator, the process of extracting the file and starting Nessus has been executed</b>
-  - <b>After starting Nessus, an URL will be provided, with the help of which we can start a connection via SSL</b>
+  - <b></b>
+  - <b></b>
 
 <p align="center">
-<img src="https://i.imgur.com/8npYHOp.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
 Get the IP address of the Windows' VM:  <br/>
