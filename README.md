@@ -7,7 +7,6 @@ Project consists of a simple python script that behaves as a ransmoware program.
 <h2>Environments Used </h2>
 
 - <b>Kali Linux</b>
-- <b>Linode</b>
 - <b>Python</b>
 
 <h2>Program walk-through:</h2>
