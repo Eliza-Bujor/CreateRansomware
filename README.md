@@ -2,7 +2,9 @@
 
 <h2>Description</h2>
 Project consists of a simple python script that behaves as a ransmoware program. This has helped in gaining more knowledge in python as well as ransomware, knowing how easy it is to create it as well as how it operates. I have decided to use DigitalOcean, a platform that allows me to create virtual machines that I can easily dispose of after implementing the ransomware on it. The machine that we will be targetting today is Ubuntu 22.04. The reason why I focused on ransomware is because ransomware is one of the most devastating malware that can take down big companies as it is quite the struggle to recover from such attacks.
-However, it is important to know that the typical ransomware is actually more complex than this project, although the idea was to demonstrate how it works and how easy it is to encrypt files and get them decrypted
+<br />
+<br />
+However, it is important to know that the typical ransomware is actually more complex than this project, although the idea was to demonstrate how it works and how easy it is to encrypt files and get them decrypted.
 <br />
 
 <h2>Environments Used </h2>
