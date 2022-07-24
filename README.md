@@ -2,6 +2,7 @@
 
 <h2>Description</h2>
 Project consists of a simple python script that behaves as a ransmoware program. This has helped in gaining more knowledge in python as well as ransomware, knowing how easy it is to create it as well as how it operates. I have decided to use DigitalOcean, a platform that allows me to create virtual machines that I can easily dispose of after implementing the ransomware on it. The machine that we will be targetting today is Ubuntu 22.04. The reason why I focused on ransomware is because ransomware is one of the most devastating malware that can take down big companies as it is quite the struggle to recover from such attacks.
+However, it is important to know that the typical ransomware is actually more complex than this project, although the idea was to demonstrate how it works and how easy it is to encrypt files and get them decrypted
 <br />
 
 <h2>Environments Used </h2>
@@ -109,10 +110,25 @@ Encrypting and locking up the files: <br/>
 <br />
 Writing the decryption script: <br/>
   
-  - <b></b>
+  - <b>First we will copy the ransomware.py and rename it to decrypt.py using the command "cp ransomware.py decrypt.py"</b>
+  - <b>Because our purpose now is just to decrypt, we will be deleting the key generator file and the function that will store the generated key into the key.key file</b>
+    - <b>Instead, now we will perform a with open operation which will open the key.key file that contains the encryption key and open as a read binary mode as we will refer to it as decrypt_key</b>
+    - <b>Then we will set a new variable called secret_key taht will store the encrypted content of the file</b>
 
 <p align="center">
-<img src="" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/Lt076Zg.png" height="30%" width="30%" alt="Disk Sanitization Steps"/>
+<br />
+
+    - <b>Those are the things that have been changed and explained the changes within the comment sections</b>
+
+<p align="center">
+<img src="https://i.imgur.com/ymJ3jpC.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+
+    - <b>Here we can notice that the files have been successfully decrypted</b>
+
+<p align="center">
+<img src="https://i.imgur.com/LeLMTKw.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
 </p>
