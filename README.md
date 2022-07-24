@@ -1,212 +1,118 @@
 <h1>Create Ransomware</h1>
 
 <h2>Description</h2>
-Project consists of a simple python script that behaves as a ransmoware program. This has helped in gaining more knowledge in python as well as ransomware, knowing how easy it is to create it as well as how it operates. The 
+Project consists of a simple python script that behaves as a ransmoware program. This has helped in gaining more knowledge in python as well as ransomware, knowing how easy it is to create it as well as how it operates. I have decided to use DigitalOcean, a platform that allows me to create virtual machines that I can easily dispose of after implementing the ransomware on it. The machine that we will be targetting today is Ubuntu 22.04. The reason why I focused on ransomware is because ransomware is one of the most devastating malware that can take down big companies as it is quite the struggle to recover from such attacks.
 <br />
 
 <h2>Environments Used </h2>
 
-- <b>Kali Linux</b>
+- <b>DigitalOcean</b>
 - <b>Python</b>
+- <b>Windows 10 command prompt</b>
 
 <h2>Program walk-through:</h2>
 
 <p align="center">
 Set up the environmnet: <br/>
   
-  - <b></b>
+  - <b>After creating the Ubuntu VM we use ssh root@IP in order to get SSH access to the machine</b>
+  - <b>We will be using my windows machine to create the connection</b>
+
+<p align="center">
+<img src="https://i.imgur.com/8YQy9Wr.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<img src="https://i.imgur.com/nw6Ccvo.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<br />
+Create files that we can use for attacking: <br/>
+  
+  - <b>First we will create a directory called files</b>
+  - <b>In the files directory we will be creating a few files that can be used later on</b>
+
+<p align="center">
+<img src="https://i.imgur.com/yf7cJK9.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<br />
+Create the ransomware python file: <br/>
+  
+  - <b>Use the command nano ransomware.py to create the python file</b>
+  - <b>The nano command will allow you to add text to the freshly created python file</b>
+
+<p align="center">
+<img src="https://i.imgur.com/47nkfpW.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<br />
+Search for the files and add them to a list: <br/>
+  
+  - <b>Use the command nano ransomware.py to create the python file</b>
+  - <b>The nano command will allow you to add text to the freshly created python file</b>
+
+<p align="center">
+<img src="https://i.imgur.com/ocYJ8TV.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<img src="https://i.imgur.com/sQL1qot.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<br />
+Reject the directories from being added to the list: <br/>
+  
+  - <b>Here we have tested what would happen if we were to add a directory to the files directory</b>
+  - <b>As it can be noticed, the directory will be also added to the list, so we have to make sure that our script doesn't allow directories to be added</b>
+
+<p align="center">
+<img src="https://i.imgur.com/eLHIN59.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<img src="https://i.imgur.com/vrTqxga.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<img src="https://i.imgur.com/sN1gEgV.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<br />
+Encrypt the files: <br/>
+  
+  - <b>First, we need to add a cryptography library that will allow us to encrypt using Fernet</b>
+  - <b>Fernet is a symmetric encryption method which assures that the encrypted message cannot be manipulated nor accessible to unauthorised parties (without the key)</b>
+  - <b>Because it uses a key to decript, we have to create a key that will be randomly generated using the Fernet library </b>
+
+<p align="center">
+<img src="https://i.imgur.com/DVwVAru.png" height="30%" width="30%" alt="Disk Sanitization Steps"/>
+<br />
+<img src="https://i.imgur.com/XIHhClS.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+
+  - <b>Now we will store the generated key on a file called key.key and we also have to make sure that we exclude this file from being added to the list as we don't intend to encrypt it further on</b>
+  
+<p align="center">
+<img src="https://i.imgur.com/h5Sqy4w.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<img src="https://i.imgur.com/n16SB2Q.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<img src="https://i.imgur.com/mSl5zQp.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<br />
+Encrypting and locking up the files: <br/>
+  
+  - <b>First, we will open the files that we selected as we want to lock up</b>
+  - <b>This step is important as we want to have direct access to the content of the files in order to proceed with the encryption process</b>
+
+<p align="center">
+<img src="https://i.imgur.com/ah62Qz7.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+  
+  - <b>Using Fernet, we will be encrypting the content within the files</b>
+  - <b>After successfully encrypting the content, we have to write it back to the file</b>
+  - <b>Because of this, we will execute again a with open function, although this time instead of having read binary method, we will be assigning a write binary method as we actually have to write content back to the files, which is the enctypted version of the file</b>
+
+<p align="center">
+<img src="https://i.imgur.com/oRiLjYw.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<img src="https://i.imgur.com/ktDfzxy.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<br />
+Writing the decryption script: <br/>
+  
   - <b></b>
 
 <p align="center">
 <img src="" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Get the IP address of the Windows' VM:  <br/>
-  
-  - <b>This command has been executed using ipconfig within the command prompt</b>
-
-<p align="center">
-<img src="https://i.imgur.com/66Nmn9P.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Enter the number of passes: <br/>
-  
-  - <b>Ping the IP address of the Windows' VM from Kali's VM to check if the machine can be reached</b>
-  - <b>If the machine couldn't be reached, a request time out will be displayed when ping command was to be executed</b>
-  - <b>In the case of this error occuring, the firewall within the Windows' VM could prevent us from establishing the connection, and such, we could disable the firewall, which usually is not recommended for production purposes, however in some canses it could depend</b>
-  
-<p align="center">
-<img src="https://i.imgur.com/kRjkihr.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Disabling firewall:  <br/>
-  
-  - <b>This is how the firewall could be disabled </b>
-  
-<p align="center">
-<img src="https://i.imgur.com/1w8srUu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-  
-  - <b>Select the off option and then press Apply and then Ok </b>
-  
-<p align="center">
-<img src="https://i.imgur.com/S3Xrto3.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Implement host discovery scan:  <br/>
-  
-  - <b>By implementing a host disocvery scan, we will be searching for open ports within the host</b>
-  - <b>This is a great tool to enumerate the systems that are on our network</b>
-  
-<p align="center">
-<img src="https://i.imgur.com/Rk335yo.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-  
-  - <b>By targetting 10.0.2.0/24, we will be targetting the local network of the Windows machine</b>
-
-<p align="center">
-<img src="https://i.imgur.com/5emTEN6.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-  
-  - <b>This sections displays what is gonna happen after we run the scan, what will be the output ports</b>
-  - <b>By selecting the Host enumeration scan type we are choosing to display only the systems that are on the network</b>
-
-<p align="center">
-<img src="https://i.imgur.com/pVnOiCR.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Results of the host discovery scan:  <br/>
-<img src="https://i.imgur.com/7sqxQzs.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-  
-  - <b>Because we didn't run a vulnerability test, nothing will be displayed on the vulnerability tab</b>
-  
-<p align="center">
-<img src="https://i.imgur.com/UDoTtUC.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Basic vulnerability scan:  <br/>
-  
-  - <b>Here we performed a basic vulnerability scan on the IP address of the Windows' VM</b>
-  - <b>The scan has been set to be automatically done every day at 2.30pm</b>
-  
-<p align="center">
-<img src="https://i.imgur.com/k8DSizi.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-After running the basic vulnerability scan:  <br/>
-  
-  - <b>The name of the basic vulnerability scan is Windows 10 Single Host scan and it can be noticed that the last scan has been done at 2:38PM today</b>
-  
-<p align="center">
-<img src="https://i.imgur.com/4wkLzgW.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Results of the scan:  <br/>
-<p align="center">
-<img src="https://i.imgur.com/ZGLxOFe.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-  
-  - <b>On the vulnerability section of the scan, it can be noticed that only 1 of the scans is critical and majority of the vulnerabilities are info</b>
-  
-<p align="center">
-<img src="https://i.imgur.com/ukbhbV2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-  
-  - <b>Here we can deduce that those issues are related to eachother, and usually if we try to solve one of them, the others will be solved as well</b>
-  
-<p align="center">
-<img src="https://i.imgur.com/lwBSxe4.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>  
-<br />
-<br />
-Enabling credentials:  <br/>
-  
-  - <b>The Windows VM has been set up to accept authenticated scans</b>
-  - <b>Credentials to Nessus have been provided and a rescan will take place</b>
-  - <b>First we will enable Remote Registry that will allow the scanner to connect to this computer's registry </b>
-  - <b>This will allow Nessus to search for insecure configurations such as deprecated cypher suites for example</b>
-  
-<p align="center">
-<img src="https://i.imgur.com/ZhSmi0K.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>  
-  
-  - <b>Next thing will be to check if the file and printer sharing are on as well as network discovery</b>
-  
-<p align="center">
-<img src="https://i.imgur.com/lz3rYV8.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-
-  - <b>Disable the notifications when changes are done at the computer, as we will be modifying things on it</b>
-  
-<p align="center">
-<img src="https://i.imgur.com/CeiWFqr.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-
-  - <b>In the registry editor we will be adding a key that will furhter disable user account control for the remote account that we will be using to connect to the Windows account during the scan</b>
-  - <b>The documentation has been taken from Nessus regarding the credentials</b>
-  - <b>Navigate to Local_machine -> Software -> Microsoft ->Windows -> Current version -> Policies -> System, where we will create a DWORD and set its value to 1 and then restart the VM</b>
-  
-<p align="center">
-<img src="https://i.imgur.com/IYBbXby.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Rescanning the Windows VM:  <br/>
-  
-  - <b>Now we can add Windows credentials to the Scan that we previously created and then run the scan one more time</b>
-  
-<p align="center">
-<img src="https://i.imgur.com/u5yBzD2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>  
-<br />
-<br />
-Results of the rescan after the implementation of credentials:  <br/>
-  
-  - <b>Now we can add Windows credentials to the Scan that we previously created and then run the scan one more time</b>
-  
-<p align="center">
-<img src="https://i.imgur.com/3VkqICE.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>  
-  
-  - <b>As this vulnerability is mostly Microsoft Edge, this issue could be solved by applying Windows updates</b>
-  
-<p align="center">
-<img src="https://i.imgur.com/gbN6jsH.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>  
-<br />
-<br />
-Installing a deprecated Firefox on Windows VM:  <br/>
-  
-<p align="center">
-<img src="https://i.imgur.com/Q8lZWJj.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>  
-  
-  - <b>Now, without doing anything else to the Windows VM we will start rerunning the scan</b>
-  
-<p align="center">
-<img src="https://i.imgur.com/3Ptx7KT.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>  
-<img src="https://i.imgur.com/3Dr0zly.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>  
-  
-  - <b>Because this version of the Firefox is so old, it has a lot of vulnerabilities</b>
-  - <b>Those vulnerabilities can be remediated by just updating Firefox to the latest version or uninstall it</b>
-  
-<p align="center">
-<img src="https://i.imgur.com/WiS0nDu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-  
-  - <b>This is what will be displayed on the remediation tab</b>
-  
-<p align="center">
-<img src="https://i.imgur.com/R8Vbb2A.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>  
-<br />
-<br />
-Remediate the vulnerabilities:  <br/>
-  
-  - <b>First we will uninstall the old version Firefox by accessing appwiz.cpl</b>
-  
-<p align="center">
-<img src="https://i.imgur.com/0IABucz.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>  
-  
-  - <b>Then, perform Windows updates until we have it up to date</b>
-  
-<p align="center">
-<img src="https://i.imgur.com/ZC9HW6m.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>  
-  
-  - <b>Run the scan again and check for vulnerabilities</b>
-  
-<p align="center">
-<img src="https://i.imgur.com/RdxyLAF.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-  
-  - <b>The remaining vulnerabilities will be around Microsoft Edge, and this could possibly happen because Windows might have not updated Microsoft Edge</b>
-  - <b>To solve this issue, we could manualy update Microsoft Edge</b>
-  
-<p align="center">
-<img src="https://i.imgur.com/5sMvz93.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>  
 <br />
 <br />
 </p>
